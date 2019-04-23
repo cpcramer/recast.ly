@@ -1,14 +1,18 @@
 // import React from 'react';
 
 
-var VideoListEntry = () => (
+var VideoListEntry = (props) => (
   <div className="video-list-entry media">
     <div className="media-left media-middle">
-      <img className="media-object" src="https://i.ytimg.com/vi/1w8Z0UOXVaY/default.jpg" alt="" />
+      <img className="media-object" src={props.video.snippet.thumbnails.default.url} alt="" />
+      {/* // <div>{props.video.snippet.thumbnails.default.url}</div> */}
     </div>
     <div className="media-body">
-      <div className="video-list-entry-title">Video Title</div>
-      <div className="video-list-entry-detail">Video Description</div>
+      {/* <div className="video-list-entry-title">Video Title</div> */}
+      <div>{props.video.snippet.title}</div>
+      {/* <div className="video-list-entry-detail">Video Description</div> */}
+      <div>{props.video.snippet.description}</div>
+
     </div>
   </div>
 );
